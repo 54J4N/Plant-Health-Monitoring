@@ -7,8 +7,8 @@ from memory_profiler import profile
 import plotly.graph_objects as go
 
 # Load the dataset
-data_path = 'C:/Users/user/Desktop/col/Plant-Health-Monitoring/test_data.csv'
-df = pd.read_csv(data_path)
+data_path = 'C:/Users/user/Desktop/col/Plant-Health-Monitoring/plant_health_dataset.csv'
+df = pd.read_csv(data_path, encoding='latin1')  # Specify 'latin1' encoding
 
 # Drop non-numeric columns
 df_numeric = df.select_dtypes(include=[np.number])
@@ -27,12 +27,12 @@ fig.show()
 
 # Define file paths
 project_dir = 'C:/Users/user/Desktop/col/Plant-Health-Monitoring'
-input_data_file = 'test_data.csv'
+input_data_file = 'plant_health_dataset.csv'
 output_file = 'preprocessed_dataset.csv'
 
 # Load the dataset
 data_path = f'{project_dir}/{input_data_file}'
-df = pd.read_csv(data_path)
+df = pd.read_csv(data_path, encoding='latin1')  # Specify 'latin1' encoding
 
 # Identify missing values
 missing_values = df.isnull().sum()
